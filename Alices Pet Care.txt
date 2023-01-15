@@ -1,0 +1,28 @@
+
+import math
+print("Welcome To Alice's Pet Care")
+t=int(input("No: of test cases")) 
+if 1<=t and t<=5:
+    N=int(input("No: of dogs"))
+    K=int(input("No: of dogwalkers"))
+    s=N*[0]
+    k=N*[0]
+    if N>=K and K>=1:
+        for i in range(N):
+            s[i]=int(input("Enter the size"))
+        for i in range(N-1):
+            if s[i]>s[i+1]:
+                     temp=s[i]
+                     s[i]=s[i+1]
+                     s[i+1]=temp
+        for i in range(K):
+            for j in range(math.floor(i*N/K),math.floor((i+1)*N/K)):
+                   k[i]+=s[j]
+        print("The ranges of each group are as follows:")
+        for i in range(K):
+            print(k[i])
+    elif K<=0:
+        print(" There is  no dogwalker to walk them")
+    else:
+        print("None of them should feel left out")
+        print("Sorry,Boss's orders")
